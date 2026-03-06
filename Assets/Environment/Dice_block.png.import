@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bbh4f6n0vs08p"
-path="res://.godot/imported/Dice_block.png-4590456de880beca7f8d562e7d8f1338.ctex"
+path="res://.godot/imported/Dice_block.png-10a8474579c4831b8bfa481961ecafa5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://SokoDice/Assets/Environment/Dice_block.png"
-dest_files=["res://.godot/imported/Dice_block.png-4590456de880beca7f8d562e7d8f1338.ctex"]
+source_file="res://Assets/Environment/Dice_block.png"
+dest_files=["res://.godot/imported/Dice_block.png-10a8474579c4831b8bfa481961ecafa5.ctex"]
 
 [params]
 

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cnixw8g3afu3a"
-path="res://.godot/imported/Floor.png-a2f377fca1131f40cf4ce9d5f9f321b0.ctex"
+path="res://.godot/imported/Floor.png-cdf33caab327f6f2418e1dd6a3b74744.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://SokoDice/Assets/Environment/Floor.png"
-dest_files=["res://.godot/imported/Floor.png-a2f377fca1131f40cf4ce9d5f9f321b0.ctex"]
+source_file="res://Assets/Environment/Floor.png"
+dest_files=["res://.godot/imported/Floor.png-cdf33caab327f6f2418e1dd6a3b74744.ctex"]
 
 [params]
 

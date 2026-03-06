@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ca68inpc4yjur"
-path="res://.godot/imported/Wall.png-6736bbc8ff29c494eca29c1bbc3bbf0a.ctex"
+path="res://.godot/imported/Wall.png-b31d4c5815717210fe0993658c790ef2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://SokoDice/Assets/Environment/Wall.png"
-dest_files=["res://.godot/imported/Wall.png-6736bbc8ff29c494eca29c1bbc3bbf0a.ctex"]
+source_file="res://Assets/Environment/Wall.png"
+dest_files=["res://.godot/imported/Wall.png-b31d4c5815717210fe0993658c790ef2.ctex"]
 
 [params]
 
