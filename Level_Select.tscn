@@ -1,0 +1,99 @@
+[gd_scene load_steps=8 format=3 uid="uid://ea838stbqp0e"]
+
+[ext_resource type="Texture2D" uid="uid://cyy1ysnkf3lfr" path="res://SokoDice/Assets/Environment/Level_tile.png" id="1_twgyq"]
+[ext_resource type="Texture2D" uid="uid://blpmypj26ne0p" path="res://SokoDice/Assets/Player/Player.png" id="2_ufaj5"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ufaj5"]
+atlas = ExtResource("1_twgyq")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_55cao"]
+atlas = ExtResource("1_twgyq")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jaj0m"]
+atlas = ExtResource("1_twgyq")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q8rit"]
+atlas = ExtResource("1_twgyq")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bgsqk"]
+atlas = ExtResource("1_twgyq")
+region = Rect2(128, 0, 32, 32)
+
+[node name="Level_Select" type="Control"]
+layout_mode = 3
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+grow_horizontal = 2
+
+[node name="Title" type="Label" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="Level_Grid" type="GridContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -285.0
+offset_top = 90.0
+offset_right = 290.0
+offset_bottom = 490.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/h_separation = 100
+theme_override_constants/v_separation = 200
+columns = 3
+
+[node name="Levels" type="VBoxContainer" parent="Level_Grid"]
+layout_mode = 2
+theme_override_constants/separation = 150
+alignment = 1
+
+[node name="Top Row" type="HBoxContainer" parent="Level_Grid/Levels"]
+layout_mode = 2
+theme_override_constants/separation = 100
+alignment = 1
+
+[node name="Level_01" type="TextureRect" parent="Level_Grid/Levels/Top Row"]
+custom_minimum_size = Vector2(125, 125)
+layout_mode = 2
+texture = SubResource("AtlasTexture_ufaj5")
+
+[node name="Level_02" type="TextureRect" parent="Level_Grid/Levels/Top Row"]
+custom_minimum_size = Vector2(125, 125)
+layout_mode = 2
+texture = SubResource("AtlasTexture_55cao")
+
+[node name="Level_03" type="TextureRect" parent="Level_Grid/Levels/Top Row"]
+custom_minimum_size = Vector2(125, 125)
+layout_mode = 2
+texture = SubResource("AtlasTexture_jaj0m")
+
+[node name="Botom Row" type="HBoxContainer" parent="Level_Grid/Levels"]
+layout_mode = 2
+theme_override_constants/separation = 100
+alignment = 1
+
+[node name="Level_04" type="TextureRect" parent="Level_Grid/Levels/Botom Row"]
+custom_minimum_size = Vector2(125, 125)
+layout_mode = 2
+texture = SubResource("AtlasTexture_q8rit")
+
+[node name="Level_05" type="TextureRect" parent="Level_Grid/Levels/Botom Row"]
+custom_minimum_size = Vector2(125, 125)
+layout_mode = 2
+texture = SubResource("AtlasTexture_bgsqk")
+
+[node name="Player_Level_Selector" type="Node2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Player_Level_Selector"]
+position = Vector2(0, 5)
+texture = ExtResource("2_ufaj5")
