@@ -1,7 +1,6 @@
-[gd_scene load_steps=8 format=3 uid="uid://ea838stbqp0e"]
+[gd_scene load_steps=7 format=3 uid="uid://ea838stbqp0e"]
 
-[ext_resource type="Texture2D" uid="uid://cyy1ysnkf3lfr" path="res://SokoDice/Assets/Environment/Level_tile.png" id="1_twgyq"]
-[ext_resource type="Texture2D" uid="uid://blpmypj26ne0p" path="res://SokoDice/Assets/Player/Player.png" id="2_ufaj5"]
+[ext_resource type="Texture2D" uid="uid://cyy1ysnkf3lfr" path="res://Assets/Environment/Level_tile.png" id="1_twgyq"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ufaj5"]
 atlas = ExtResource("1_twgyq")
@@ -31,9 +30,17 @@ anchor_right = 0.5
 grow_horizontal = 2
 
 [node name="Title" type="Label" parent="."]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -136.0
+offset_top = 15.0
+offset_right = 136.0
+offset_bottom = 73.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 42
+text = "Select a Level"
 
 [node name="Level_Grid" type="GridContainer" parent="."]
 layout_mode = 1
@@ -43,9 +50,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -285.0
-offset_top = 90.0
+offset_top = 134.0
 offset_right = 290.0
-offset_bottom = 490.0
+offset_bottom = 534.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/h_separation = 100
@@ -93,7 +100,3 @@ layout_mode = 2
 texture = SubResource("AtlasTexture_bgsqk")
 
 [node name="Player_Level_Selector" type="Node2D" parent="."]
-
-[node name="Sprite2D" type="Sprite2D" parent="Player_Level_Selector"]
-position = Vector2(0, 5)
-texture = ExtResource("2_ufaj5")
