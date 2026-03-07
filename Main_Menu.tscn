@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://b7x3fu24ji87j"]
+[gd_scene load_steps=4 format=3 uid="uid://b7x3fu24ji87j"]
 
 [ext_resource type="Script" uid="uid://bmbvey3732ww5" path="res://main_menu.gd" id="1_m625n"]
+[ext_resource type="PackedScene" uid="uid://d3va0wv5h0kok" path="res://Scene_Transition.tscn" id="2_wugcc"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wugcc"]
 bg_color = Color(0.12955844, 0.1295585, 0.12955838, 1)
@@ -73,6 +74,8 @@ theme_override_font_sizes/font_size = 36
 theme_override_styles/normal = SubResource("StyleBoxFlat_wugcc")
 text = "Exit
 "
+
+[node name="Scene_Transition" parent="." instance=ExtResource("2_wugcc")]
 
 [connection signal="pressed" from="Menu_Options/Start Button" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="Menu_Options/Exit Button" to="." method="_on_exit_button_pressed"]

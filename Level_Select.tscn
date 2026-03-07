@@ -1,8 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://ea838stbqp0e"]
+[gd_scene load_steps=10 format=3 uid="uid://ea838stbqp0e"]
 
 [ext_resource type="Script" uid="uid://bvgshb0woihcd" path="res://level_select.gd" id="1_55cao"]
 [ext_resource type="Texture2D" uid="uid://cyy1ysnkf3lfr" path="res://Assets/Environment/Level_tile.png" id="1_twgyq"]
 [ext_resource type="PackedScene" uid="uid://cc8ag8rb1u54s" path="res://Player_Selector.tscn" id="2_ufaj5"]
+[ext_resource type="PackedScene" uid="uid://d3va0wv5h0kok" path="res://Scene_Transition.tscn" id="4_jaj0m"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ufaj5"]
 atlas = ExtResource("1_twgyq")
@@ -31,12 +32,6 @@ anchor_left = 0.5
 anchor_right = 0.5
 grow_horizontal = 2
 script = ExtResource("1_55cao")
-Main_Menu_Path = null
-lvl1 = null
-lvl2 = null
-lvl3 = null
-lvl4 = null
-lvl5 = null
 
 [node name="Title" type="Label" parent="."]
 layout_mode = 1
@@ -87,10 +82,10 @@ texture = SubResource("AtlasTexture_ufaj5")
 custom_minimum_size = Vector2(2, 2)
 layout_mode = 1
 anchors_preset = 0
-offset_left = 47.999996
-offset_top = 95.0
-offset_right = 49.999996
-offset_bottom = 97.0
+offset_left = 49.999996
+offset_top = 52.0
+offset_right = 51.999996
+offset_bottom = 54.0
 scale = Vector2(2.5164115, 2.5158675)
 
 [node name="Level_02" type="TextureRect" parent="Level_Grid/Levels/Top Row"]
@@ -102,10 +97,10 @@ texture = SubResource("AtlasTexture_55cao")
 custom_minimum_size = Vector2(2, 2)
 layout_mode = 1
 anchors_preset = 0
-offset_left = 47.999996
-offset_top = 95.0
-offset_right = 49.999996
-offset_bottom = 97.0
+offset_left = 49.999996
+offset_top = 52.0
+offset_right = 51.999996
+offset_bottom = 54.0
 scale = Vector2(2.5164115, 2.5158675)
 
 [node name="Level_03" type="TextureRect" parent="Level_Grid/Levels/Top Row"]
@@ -117,10 +112,10 @@ texture = SubResource("AtlasTexture_jaj0m")
 custom_minimum_size = Vector2(2, 2)
 layout_mode = 1
 anchors_preset = 0
-offset_left = 47.999996
-offset_top = 95.0
-offset_right = 49.999996
-offset_bottom = 97.0
+offset_left = 49.999996
+offset_top = 52.0
+offset_right = 51.999996
+offset_bottom = 54.0
 scale = Vector2(2.5164115, 2.5158675)
 
 [node name="Botom Row" type="HBoxContainer" parent="Level_Grid/Levels"]
@@ -137,10 +132,10 @@ texture = SubResource("AtlasTexture_q8rit")
 custom_minimum_size = Vector2(2, 2)
 layout_mode = 1
 anchors_preset = 0
-offset_left = 47.999996
-offset_top = 95.0
-offset_right = 49.999996
-offset_bottom = 97.0
+offset_left = 49.999996
+offset_top = 52.0
+offset_right = 51.999996
+offset_bottom = 54.0
 scale = Vector2(2.5164115, 2.5158675)
 
 [node name="Level_05" type="TextureRect" parent="Level_Grid/Levels/Botom Row"]
@@ -152,10 +147,10 @@ texture = SubResource("AtlasTexture_bgsqk")
 custom_minimum_size = Vector2(2, 2)
 layout_mode = 1
 anchors_preset = 0
-offset_left = 47.999996
-offset_top = 95.0
-offset_right = 49.999996
-offset_bottom = 97.0
+offset_left = 49.999996
+offset_top = 52.0
+offset_right = 51.999996
+offset_bottom = 54.0
 scale = Vector2(2.5164115, 2.5158675)
 
 [node name="Selector" type="Control" parent="."]
@@ -168,3 +163,11 @@ scale = Vector2(1.25, 1.25)
 
 [node name="Player_Level_Selector" parent="Selector" instance=ExtResource("2_ufaj5")]
 layout_mode = 0
+
+[node name="Scene_Transition" parent="." instance=ExtResource("4_jaj0m")]
+
+[node name="Control" type="Control" parent="."]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0

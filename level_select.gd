@@ -22,6 +22,9 @@ var selected_index: int = 0
 var is_moving: bool = false
 var level_paths: Array[String] = []
 
+# Level Transition
+@onready var transition = $Scene_Transition
+
 func _ready() -> void:
 	level_paths = [lvl1, lvl2, lvl3, lvl4, lvl5]
 	snap_to_current_tile()
@@ -130,9 +133,10 @@ func snap_to_current_tile() -> void:
 	level_selector.play_idle()
 
 func get_tile_position(tile: Control) -> Vector2:
-	return tile.get_global_rect().position
+	return tile.global_position
 
 func load_selected_level() -> void:
+	await transition.swipe_down()
 	get_tree().change_scene_to_file(level_paths[selected_index])
 
 func go_back_to_main_menu() -> void:

@@ -177,7 +177,6 @@ anchors_preset = 0
 script = ExtResource("1_nqq1i")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(100, 100)
 scale = Vector2(2.5, 2.5)
 sprite_frames = SubResource("SpriteFrames_47wu6")
 animation = &"strafe"

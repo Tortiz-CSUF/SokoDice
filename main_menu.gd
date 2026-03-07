@@ -2,11 +2,11 @@ extends Control
 
 @export var Level_Select_Path: String = "res://Level_Select.tscn"
 
-
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Intentionally passed
-
+	# Scene Transition
+	var transition = $Scene_Transition
+	await transition.swipe_up()
 
 
 func _on_start_button_pressed() -> void:
