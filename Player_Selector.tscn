@@ -171,7 +171,9 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Player_Level_Selector" type="Node2D"]
+[node name="Player_Level_Selector" type="Control"]
+layout_mode = 3
+anchors_preset = 0
 script = ExtResource("1_nqq1i")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
