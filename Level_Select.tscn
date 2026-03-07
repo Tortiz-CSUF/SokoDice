@@ -1,6 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://ea838stbqp0e"]
+[gd_scene load_steps=9 format=3 uid="uid://ea838stbqp0e"]
 
+[ext_resource type="Script" uid="uid://bvgshb0woihcd" path="res://level_select.gd" id="1_55cao"]
 [ext_resource type="Texture2D" uid="uid://cyy1ysnkf3lfr" path="res://Assets/Environment/Level_tile.png" id="1_twgyq"]
+[ext_resource type="PackedScene" uid="uid://cc8ag8rb1u54s" path="res://Player_Selector.tscn" id="2_ufaj5"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ufaj5"]
 atlas = ExtResource("1_twgyq")
@@ -28,6 +30,7 @@ anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 grow_horizontal = 2
+script = ExtResource("1_55cao")
 
 [node name="Title" type="Label" parent="."]
 layout_mode = 1
@@ -50,9 +53,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -285.0
-offset_top = 134.0
+offset_top = 140.0
 offset_right = 290.0
-offset_bottom = 534.0
+offset_bottom = 540.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/h_separation = 100
@@ -70,17 +73,17 @@ theme_override_constants/separation = 100
 alignment = 1
 
 [node name="Level_01" type="TextureRect" parent="Level_Grid/Levels/Top Row"]
-custom_minimum_size = Vector2(125, 125)
+custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 texture = SubResource("AtlasTexture_ufaj5")
 
 [node name="Level_02" type="TextureRect" parent="Level_Grid/Levels/Top Row"]
-custom_minimum_size = Vector2(125, 125)
+custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 texture = SubResource("AtlasTexture_55cao")
 
 [node name="Level_03" type="TextureRect" parent="Level_Grid/Levels/Top Row"]
-custom_minimum_size = Vector2(125, 125)
+custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 texture = SubResource("AtlasTexture_jaj0m")
 
@@ -90,13 +93,17 @@ theme_override_constants/separation = 100
 alignment = 1
 
 [node name="Level_04" type="TextureRect" parent="Level_Grid/Levels/Botom Row"]
-custom_minimum_size = Vector2(125, 125)
+custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 texture = SubResource("AtlasTexture_q8rit")
 
 [node name="Level_05" type="TextureRect" parent="Level_Grid/Levels/Botom Row"]
-custom_minimum_size = Vector2(125, 125)
+custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 texture = SubResource("AtlasTexture_bgsqk")
 
-[node name="Player_Level_Selector" type="Node2D" parent="."]
+[node name="Selector" type="Node2D" parent="."]
+position = Vector2(-548, 65.00001)
+scale = Vector2(1.25, 1.25)
+
+[node name="Player_Level_Selector" parent="Selector" instance=ExtResource("2_ufaj5")]

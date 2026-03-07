@@ -1,6 +1,6 @@
 [gd_scene load_steps=24 format=3 uid="uid://cc8ag8rb1u54s"]
 
-[ext_resource type="Script" uid="uid://lxoqv551upso" path="res://player_movement.gd" id="1_kpjcp"]
+[ext_resource type="Script" uid="uid://dgtttv5j78web" path="res://player_level_selector.gd" id="1_nqq1i"]
 [ext_resource type="Texture2D" uid="uid://blpmypj26ne0p" path="res://Assets/Player/Player.png" id="2_kne1u"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_e80uo"]
@@ -171,13 +171,11 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Player" type="Node2D"]
-script = ExtResource("1_kpjcp")
+[node name="Player_Level_Selector" type="Node2D"]
+script = ExtResource("1_nqq1i")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(100, 100)
 scale = Vector2(2.5, 2.5)
 sprite_frames = SubResource("SpriteFrames_47wu6")
-animation = &"idle"
-frame = 1
-frame_progress = 0.9237357
+animation = &"strafe"
