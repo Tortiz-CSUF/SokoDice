@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=4 uid="uid://dq4v7n5aaq032"]
+[gd_scene load_steps=4 format=4 uid="uid://dq4v7n5aaq032"]
 
 [ext_resource type="TileSet" uid="uid://mesdssk5r0pe" path="res://Assets/Environment/Level_Tiles.tres" id="1_n6sch"]
 [ext_resource type="PackedScene" uid="uid://cqrfgam6hk6lw" path="res://player.tscn" id="2_ruxot"]
+[ext_resource type="PackedScene" uid="uid://tpkrgv442bt6" path="res://dice_block.tscn" id="3_ruxot"]
 
 [node name="Level_01" type="Node2D"]
 
@@ -14,3 +15,7 @@ tile_set = ExtResource("1_n6sch")
 position = Vector2(640, 320)
 
 [node name="UI" type="CanvasLayer" parent="."]
+
+[node name="DiceBlock" parent="." instance=ExtResource("3_ruxot")]
+position = Vector2(608, 288)
+pip_count = 2

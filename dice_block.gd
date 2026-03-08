@@ -1,11 +1,11 @@
 extends Node2D
 
 @export var tile_size: int = 32
-@export var move_duration: float = 012
+@export var move_duration: float = 0.12
+@export var pip_count: int = 1	#pip count of dice block = allowed spaces to move
 
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 
-var pip_count: int = 1	#pip count of dice block = allowed spaces to move
 var is_on_tile: bool = false	
 var is_moving: bool = false
 

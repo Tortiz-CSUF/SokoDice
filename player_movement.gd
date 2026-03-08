@@ -32,10 +32,23 @@ func try_move(direction: Vector2) -> void:
 	var target_pos: Vector2 = position + direction * tile_size
 	face_direction(direction)
 	
-	if not is_walkable(target_pos):
+	# check dice block rtarget_pos
+	var dice_block = get_dice_block_at(target_pos)
+	
+	if dice_block:
+		if dice_block.is_moving:
+			return
+			
+		dice_block.move_in_direction(direction, tilemap)
+		
+		if not is_walkable(target_pos):
+			play_animation("push")
+			return
+	elif not is_walkable(target_pos):
+		
 		play_animation("push")
 		return
-		
+	
 	is_moving = true
 	play_animation(direction_to_anim(direction))
 	
@@ -76,3 +89,10 @@ func direction_to_anim(direction: Vector2) -> String:
 func play_animation(anim_name: String) -> void:
 	if animated_sprite.sprite_frames and animated_sprite.sprite_frames.has_animation(anim_name):
 		animated_sprite.play(anim_name)
+		
+func get_dice_block_at(target_pos: Vector2) -> Node2D:
+	for dice in get_parent().get_children():
+		if dice is Node2D and dice.name.begins_with("DiceBlock"):
+			if dice.position == target_pos:
+				return dice
+	return null
