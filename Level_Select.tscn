@@ -155,10 +155,10 @@ scale = Vector2(2.5164115, 2.5158675)
 
 [node name="Selector" type="Control" parent="."]
 anchors_preset = 0
-offset_left = -548.0
-offset_top = 65.00001
-offset_right = -548.0
-offset_bottom = 65.00001
+offset_left = -235.00003
+offset_top = 188.0
+offset_right = -235.00003
+offset_bottom = 188.0
 scale = Vector2(1.25, 1.25)
 
 [node name="Player_Level_Selector" parent="Selector" instance=ExtResource("2_ufaj5")]

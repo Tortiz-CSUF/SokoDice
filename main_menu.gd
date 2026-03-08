@@ -10,6 +10,9 @@ func _ready() -> void:
 
 
 func _on_start_button_pressed() -> void:
+	# Scene Transition
+	var transition = $Scene_Transition
+	await transition.swipe_down()
 	# Loads in level select scene
 	# MUST SET LEVEL SELECT SCENE ONCE CREATE
 	get_tree().change_scene_to_file(Level_Select_Path)

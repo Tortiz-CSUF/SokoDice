@@ -26,6 +26,7 @@ var level_paths: Array[String] = []
 @onready var transition = $Scene_Transition
 
 func _ready() -> void:
+	await transition.swipe_up()
 	level_paths = [lvl1, lvl2, lvl3, lvl4, lvl5]
 	snap_to_current_tile()
 
@@ -140,4 +141,5 @@ func load_selected_level() -> void:
 	get_tree().change_scene_to_file(level_paths[selected_index])
 
 func go_back_to_main_menu() -> void:
+	await transition.swipe_down()
 	get_tree().change_scene_to_file(Main_Menu_Path)
