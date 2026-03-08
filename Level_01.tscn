@@ -1,11 +1,14 @@
-[gd_scene load_steps=5 format=4 uid="uid://dq4v7n5aaq032"]
+[gd_scene load_steps=7 format=4 uid="uid://dq4v7n5aaq032"]
 
+[ext_resource type="Script" uid="uid://dxw42k8js52pv" path="res://level.gd" id="1_5pep1"]
 [ext_resource type="TileSet" uid="uid://mesdssk5r0pe" path="res://Assets/Environment/Level_Tiles.tres" id="1_n6sch"]
 [ext_resource type="PackedScene" uid="uid://cqrfgam6hk6lw" path="res://player.tscn" id="2_ruxot"]
 [ext_resource type="PackedScene" uid="uid://tpkrgv442bt6" path="res://dice_block.tscn" id="3_ruxot"]
 [ext_resource type="PackedScene" uid="uid://di1mdnomv85f6" path="res://dice_tile.tscn" id="4_qqa7j"]
+[ext_resource type="PackedScene" uid="uid://d3va0wv5h0kok" path="res://Scene_Transition.tscn" id="6_hym0u"]
 
 [node name="Level_01" type="Node2D"]
+script = ExtResource("1_5pep1")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 position = Vector2(512, -256)
@@ -32,5 +35,21 @@ position = Vector2(544, 320)
 [node name="UI" type="CanvasLayer" parent="."]
 
 [node name="VBoxContainer" type="VBoxContainer" parent="UI"]
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 64.0
+offset_top = 352.0
+offset_right = 140.0
+offset_bottom = 576.0
+theme_override_constants/separation = 100
+
+[node name="MoveCounter" type="Label" parent="UI/VBoxContainer"]
+layout_mode = 2
+text = "Moves: 0"
+
+[node name="Hotkeys" type="Label" parent="UI/VBoxContainer"]
+layout_mode = 2
+text = "Hotkeys:
+	Z -Undo
+	X -Redo
+	R -Restart"
+
+[node name="Scene_Transition" parent="." instance=ExtResource("6_hym0u")]

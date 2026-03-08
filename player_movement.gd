@@ -63,6 +63,9 @@ func try_move(direction: Vector2) -> void:
 func _on_move_finsihed() -> void:
 	is_moving = false
 	play_animation("idle")
+	
+	# increment step to movecounter 
+	get_parent().add_move()
 
 func is_walkable(target_pos: Vector2) -> bool:
 	var cell := tilemap.local_to_map(tilemap.to_local(target_pos))
