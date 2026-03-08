@@ -39,11 +39,14 @@ func try_move(direction: Vector2) -> void:
 		if dice_block.is_moving:
 			return
 			
-		dice_block.move_in_direction(direction, tilemap)
-		
-		if not is_walkable(target_pos):
+		var behind_pos := target_pos + direction * tile_size
+				
+		if not is_walkable(behind_pos):
 			play_animation("push")
 			return
+		
+		dice_block.move_in_direction(direction, tilemap)
+			
 	elif not is_walkable(target_pos):
 		
 		play_animation("push")

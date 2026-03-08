@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://b7iq3vo85mgut" path="res://Assets/Environment/Dice_tile.png" id="2_3k4mo"]
 
 [node name="DiceTile" type="Node2D"]
+z_index = 1
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_3k4mo")

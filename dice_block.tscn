@@ -151,6 +151,7 @@ animations = [{
 }]
 
 [node name="DiceBlock" type="Node2D"]
+z_index = 2
 script = ExtResource("1_eikn7")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
