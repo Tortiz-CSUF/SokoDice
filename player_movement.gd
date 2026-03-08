@@ -64,10 +64,16 @@ func try_move(direction: Vector2) -> void:
 func _on_move_finsihed() -> void:
 	is_moving = false
 	play_animation("idle")
-	
+		
 	# increment step to movecounter 
 	get_parent().add_move()
-	get_parent().save_state()
+	
+	# wait for dice blocks
+	var parent = get_parent()
+	for node in parent.get_children():
+		if node.name.begins_with("DiceBlock") and node.is_moving:
+			await get_tree().create_timer(node.move_duration * node.pip_count).timeout
+	parent.save_state()
 
 func is_walkable(target_pos: Vector2) -> bool:
 	var cell := tilemap.local_to_map(tilemap.to_local(target_pos))

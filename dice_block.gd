@@ -52,6 +52,7 @@ func move_in_direction(direction: Vector2, tilemap: TileMapLayer) -> void:
 		
 func _on_move_finished() -> void:
 	is_moving = false
+	current_tween = null
 	check_on_tile()
 		
 func is_cell_walkable(target_pos: Vector2, tilemap: TileMapLayer) -> bool:
