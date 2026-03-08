@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://pqwj6bgaw0jo"]
+
+[node name="LevelBackground" type="ColorRect"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1152.0
+offset_bottom = 648.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color(0.89411765, 0.6509804, 0.44705883, 1)
+metadata/_edit_use_anchors_ = true

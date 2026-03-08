@@ -1,8 +1,10 @@
 extends Node2D
 
 @export var level_select_path: String = "res://Level_Select.tscn"
+@export var level_index: String = "1"
 
 @onready var move_counter_label: Label = $UI/VBoxContainer/MoveCounter
+@onready var level_title: Label = $UI/LevelTitle
 @onready var dice_blocks: Array = []
 @onready var dice_tiles: Array = []
 
@@ -17,6 +19,8 @@ var redo_stack: Array = []
 func _ready() -> void:
 	transition = $Scene_Transition
 	await transition.swipe_up()
+	
+	level_title.text = "Level: " + level_index
 	
 	for node in get_children():
 		if node.name.begins_with("DiceBlock"):

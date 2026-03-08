@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=4 uid="uid://dqds6aborahq5"]
+[gd_scene load_steps=9 format=4 uid="uid://dqds6aborahq5"]
 
 [ext_resource type="Script" uid="uid://dxw42k8js52pv" path="res://level.gd" id="1_q1dd3"]
 [ext_resource type="TileSet" uid="uid://mesdssk5r0pe" path="res://Assets/Environment/Level_Tiles.tres" id="1_ryxbh"]
 [ext_resource type="PackedScene" uid="uid://cqrfgam6hk6lw" path="res://player.tscn" id="2_ha4od"]
+[ext_resource type="PackedScene" uid="uid://pqwj6bgaw0jo" path="res://level_background.tscn" id="2_teb6j"]
 [ext_resource type="PackedScene" uid="uid://bmsyc3kqs7at1" path="res://ui.tscn" id="3_elpf1"]
 [ext_resource type="PackedScene" uid="uid://d3va0wv5h0kok" path="res://Scene_Transition.tscn" id="4_q1dd3"]
 [ext_resource type="PackedScene" uid="uid://di1mdnomv85f6" path="res://dice_tile.tscn" id="6_86idg"]
@@ -10,48 +11,53 @@
 
 [node name="Level_03" type="Node2D"]
 script = ExtResource("1_q1dd3")
+level_index = "3"
+
+[node name="LevelBackground" parent="." instance=ExtResource("2_teb6j")]
+offset_top = -1.0
+offset_bottom = 647.0
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
-position = Vector2(512, 64)
-tile_map_data = PackedByteArray("AAD+/wUAAgAAAAAAAAD+/wYAAgAAAAAAAAD+/wcAAgAAAAAAAAD+/wgAAgAAAAAAAAD//wgAAgAAAAAAAAD//wkAAgAAAAAAAAD//woAAgAAAAAAAAD//wsAAgAAAAAAAAD//wwAAgAAAAAAAAD//w0AAgAAAAAAAAD//wUAAgAAAAAAAAAAAAUAAgAAAAAAAAABAAUAAgAAAAAAAAACAAUAAgAAAAAAAAADAAUAAgAAAAAAAAAEAAUAAgAAAAAAAAAFAAUAAgAAAAAAAAAGAAUAAgAAAAAAAAAAAA0AAgAAAAAAAAABAA0AAgAAAAAAAAACAA0AAgAAAAAAAAACAAwAAgAAAAAAAAADAAwAAgAAAAAAAAAEAAwAAgAAAAAAAAAEAAsAAgAAAAAAAAAEAAoAAgAAAAAAAAAFAAoAAgAAAAAAAAAFAAkAAgAAAAAAAAAGAAkAAgAAAAAAAAAGAAgAAgAAAAAAAAAGAAcAAgAAAAAAAAAGAAYAAgAAAAAAAAABAAgAAgAAAAAAAAACAAgAAgAAAAAAAAADAAgAAgAAAAAAAAAAAAYAAQAAAAAAAAACAAYAAQAAAAAAAAADAAYAAQAAAAAAAAAEAAYAAQAAAAAAAAAFAAYAAQAAAAAAAAAFAAcAAQAAAAAAAAAFAAgAAQAAAAAAAAAEAAgAAQAAAAAAAAAEAAcAAQAAAAAAAAACAAcAAQAAAAAAAAAAAAcAAQAAAAAAAAAAAAgAAQAAAAAAAAAAAAkAAQAAAAAAAAAAAAoAAQAAAAAAAAAAAAsAAQAAAAAAAAAAAAwAAQAAAAAAAAABAAwAAQAAAAAAAAABAAsAAQAAAAAAAAABAAoAAQAAAAAAAAABAAkAAQAAAAAAAAACAAkAAQAAAAAAAAADAAkAAQAAAAAAAAAEAAkAAQAAAAAAAAADAAoAAQAAAAAAAAACAAoAAQAAAAAAAAACAAsAAQAAAAAAAAADAAsAAQAAAAAAAAADAAcAAQAAAAAAAAABAAcAAQAAAAAAAAD//wcAAQAAAAAAAAD//wYAAQAAAAAAAAABAAYAAQAAAAAAAAA=")
+position = Vector2(544, 64)
+tile_map_data = PackedByteArray("AAD2/xAAAgAAAAAAAAD3/xAAAgAAAAAAAAD4/xAAAgAAAAAAAAD5/xAAAgAAAAAAAAD5/w8AAgAAAAAAAAD5/w4AAgAAAAAAAAD5/w0AAgAAAAAAAAD6/w0AAgAAAAAAAAD7/w0AAgAAAAAAAAD8/w0AAgAAAAAAAAD8/w4AAgAAAAAAAAD8/w8AAgAAAAAAAAD8/xAAAgAAAAAAAAD9/xAAAgAAAAAAAAD+/xAAAgAAAAAAAAD//xAAAgAAAAAAAAD//w8AAgAAAAAAAAD//w4AAgAAAAAAAAD//w0AAgAAAAAAAAAAAA0AAgAAAAAAAAABAA0AAgAAAAAAAAACAA0AAgAAAAAAAAADAA0AAgAAAAAAAAADAA4AAgAAAAAAAAADAA8AAgAAAAAAAAADABAAAgAAAAAAAAAEABAAAgAAAAAAAAAFABAAAgAAAAAAAAAGABAAAgAAAAAAAAAGAA8AAgAAAAAAAAAGAA4AAgAAAAAAAAAGAA0AAgAAAAAAAAAHAA0AAgAAAAAAAAAIAA0AAgAAAAAAAAAJAA0AAgAAAAAAAAAKAA0AAgAAAAAAAAAKAA4AAgAAAAAAAAAKAA8AAgAAAAAAAAAKABAAAgAAAAAAAAALABAAAgAAAAAAAAAMABAAAgAAAAAAAAANABAAAgAAAAAAAAANAA8AAgAAAAAAAAANAA4AAgAAAAAAAAANAA0AAgAAAAAAAAANAAwAAgAAAAAAAAANAAsAAgAAAAAAAAANAAoAAgAAAAAAAAANAAkAAgAAAAAAAAANAAgAAgAAAAAAAAANAAcAAgAAAAAAAAANAAYAAgAAAAAAAAANAAUAAgAAAAAAAAANAAQAAgAAAAAAAAANAAMAAgAAAAAAAAANAAIAAgAAAAAAAAANAAEAAgAAAAAAAAAMAAEAAgAAAAAAAAALAAEAAgAAAAAAAAAKAAEAAgAAAAAAAAAJAAEAAgAAAAAAAAAIAAEAAgAAAAAAAAAHAAEAAgAAAAAAAAAGAAEAAgAAAAAAAAAFAAEAAgAAAAAAAAAEAAEAAgAAAAAAAAADAAEAAgAAAAAAAAACAAEAAgAAAAAAAAABAAEAAgAAAAAAAAAAAAEAAgAAAAAAAAD//wEAAgAAAAAAAAD+/wEAAgAAAAAAAAD9/wEAAgAAAAAAAAD8/wEAAgAAAAAAAAD7/wEAAgAAAAAAAAD6/wEAAgAAAAAAAAD5/wEAAgAAAAAAAAD4/wEAAgAAAAAAAAD3/wEAAgAAAAAAAAD2/wEAAgAAAAAAAAD1/wEAAgAAAAAAAAD1/wIAAgAAAAAAAAD1/wMAAgAAAAAAAAD1/wQAAgAAAAAAAAD1/wUAAgAAAAAAAAD1/wYAAgAAAAAAAAD1/wcAAgAAAAAAAAD1/wgAAgAAAAAAAAD1/wkAAgAAAAAAAAD1/woAAgAAAAAAAAD1/wsAAgAAAAAAAAD1/wwAAgAAAAAAAAD1/w0AAgAAAAAAAAD1/w4AAgAAAAAAAAD1/w8AAgAAAAAAAAD1/xAAAgAAAAAAAAD3/wwAAgAAAAAAAAD3/woAAgAAAAAAAAD3/wgAAgAAAAAAAAD3/wYAAgAAAAAAAAD2/wMAAgAAAAAAAAD7/wMAAgAAAAAAAAABAAMAAgAAAAAAAAAHAAMAAgAAAAAAAAAMAAMAAgAAAAAAAAALAAMAAgAAAAAAAAAIAAMAAgAAAAAAAAAGAAMAAgAAAAAAAAACAAMAAgAAAAAAAAAAAAMAAgAAAAAAAAD8/wMAAgAAAAAAAAD6/wMAAgAAAAAAAAD3/wMAAgAAAAAAAAD7/wYAAQAAAAAAAAD7/wgAAQAAAAAAAAD7/woAAQAAAAAAAAD7/wwAAgAAAAAAAAABAAYAAgAAAAAAAAABAAgAAgAAAAAAAAABAAoAAgAAAAAAAAAHAAYAAQAAAAAAAAAHAAgAAQAAAAAAAAAHAAoAAQAAAAAAAAAHAAwAAgAAAAAAAAAHAAQAAgAAAAAAAAD7/wQAAgAAAAAAAAAMAAYAAgAAAAAAAAAMAAgAAgAAAAAAAAAMAAoAAgAAAAAAAAAMAAwAAgAAAAAAAAD+/wIAAQAAAAAAAAD+/wMAAQAAAAAAAAD+/wQAAgAAAAAAAAD+/wUAAgAAAAAAAAAEAAIAAQAAAAAAAAAEAAMAAQAAAAAAAAAEAAQAAgAAAAAAAAAEAAUAAgAAAAAAAAD+/wgAAgAAAAAAAAD+/wkAAgAAAAAAAAD+/woAAgAAAAAAAAD+/wsAAgAAAAAAAAAEAAgAAgAAAAAAAAAEAAkAAgAAAAAAAAAEAAoAAgAAAAAAAAAEAAsAAgAAAAAAAAD6/woAAQAAAAAAAAAIAAoAAQAAAAAAAAAGAAgAAQAAAAAAAAD8/wgAAQAAAAAAAAAIAAYAAgAAAAAAAAD6/wYAAgAAAAAAAAD+/wwAAQAAAAAAAAAEAAwAAQAAAAAAAAA=")
 tile_set = ExtResource("1_ryxbh")
 
 [node name="Player" parent="." instance=ExtResource("2_ha4od")]
-position = Vector2(640, 320)
+position = Vector2(928, 544)
+
+[node name="DiceTile" parent="." instance=ExtResource("6_86idg")]
+position = Vector2(224, 128)
+
+[node name="DiceTile2" parent="." instance=ExtResource("6_86idg")]
+position = Vector2(384, 128)
+
+[node name="DiceTile3" parent="." instance=ExtResource("6_86idg")]
+position = Vector2(576, 128)
+
+[node name="DiceTile4" parent="." instance=ExtResource("6_86idg")]
+position = Vector2(768, 128)
+
+[node name="DiceTile5" parent="." instance=ExtResource("6_86idg")]
+position = Vector2(928, 128)
+
+[node name="DiceBlock" parent="." instance=ExtResource("7_teb6j")]
+position = Vector2(448, 512)
+
+[node name="DiceBlock2" parent="." instance=ExtResource("7_teb6j")]
+position = Vector2(224, 512)
+
+[node name="DiceBlock3" parent="." instance=ExtResource("7_teb6j")]
+position = Vector2(576, 448)
+pip_count = 2
+
+[node name="DiceBlock4" parent="." instance=ExtResource("7_teb6j")]
+position = Vector2(288, 512)
+pip_count = 3
+
+[node name="DiceBlock5" parent="." instance=ExtResource("7_teb6j")]
+position = Vector2(704, 512)
+pip_count = 3
 
 [node name="UI" parent="." instance=ExtResource("3_elpf1")]
 
 [node name="Scene_Transition" parent="." instance=ExtResource("4_q1dd3")]
-
-[node name="DiceTile" parent="." instance=ExtResource("6_86idg")]
-position = Vector2(480, 256)
-
-[node name="DiceTile2" parent="." instance=ExtResource("6_86idg")]
-position = Vector2(480, 288)
-
-[node name="DiceTile3" parent="." instance=ExtResource("6_86idg")]
-position = Vector2(544, 256)
-
-[node name="DiceTile4" parent="." instance=ExtResource("6_86idg")]
-position = Vector2(544, 288)
-
-[node name="DiceTile5" parent="." instance=ExtResource("6_86idg")]
-position = Vector2(608, 288)
-
-[node name="DiceBlock" parent="." instance=ExtResource("7_teb6j")]
-position = Vector2(512, 320)
-
-[node name="DiceBlock2" parent="." instance=ExtResource("7_teb6j")]
-position = Vector2(544, 384)
-
-[node name="DiceBlock3" parent="." instance=ExtResource("7_teb6j")]
-position = Vector2(576, 352)
-pip_count = 2
-
-[node name="DiceBlock4" parent="." instance=ExtResource("7_teb6j")]
-position = Vector2(576, 384)
-pip_count = 3
-
-[node name="DiceBlock5" parent="." instance=ExtResource("7_teb6j")]
-position = Vector2(576, 416)
-pip_count = 3
