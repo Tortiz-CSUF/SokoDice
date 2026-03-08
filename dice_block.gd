@@ -8,6 +8,8 @@ extends Node2D
 
 var is_on_tile: bool = false	
 var is_moving: bool = false
+var current_tween = null
+
 
 func _ready() -> void:
 	position = position.snapped(Vector2(tile_size, tile_size))
@@ -43,9 +45,9 @@ func move_in_direction(direction: Vector2, tilemap: TileMapLayer) -> void:
 		return
 		
 	is_moving = true
-	var tween := create_tween()
-	tween.tween_property(self, "position", final_pos, move_duration * spaces_to_move)
-	tween.finished.connect(_on_move_finished)
+	current_tween = create_tween()
+	current_tween.tween_property(self, "position", final_pos, move_duration * spaces_to_move)
+	current_tween.finished.connect(_on_move_finished)
 	
 		
 func _on_move_finished() -> void:
@@ -59,7 +61,15 @@ func is_cell_walkable(target_pos: Vector2, tilemap: TileMapLayer) -> bool:
 	if tile_data == null:
 		return false
 		
-	return not tile_data.get_custom_data("is_wall")
+	if tile_data.get_custom_data("is_wall"):
+		return false
+	
+	for node in get_parent().get_children():
+		if node != self and node.name.begins_with("DiceBlock"):
+			if node.position == target_pos:
+				return false
+				
+	return true 
 		
 func check_on_tile() -> void:
 	is_on_tile = false
@@ -71,4 +81,11 @@ func check_on_tile() -> void:
 				break
 	update_face()
 		
+func cancel_movement() -> void:
+	
+	if current_tween:
+		current_tween.kill()
+		current_tween = null
+		
+	is_moving = false
 	

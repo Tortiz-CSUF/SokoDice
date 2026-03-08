@@ -45,16 +45,10 @@ func try_move(direction: Vector2) -> void:
 			play_animation("push")
 			return
 			
-		# save state before next move
-		#get_parent().save_state()
-		#dice_block.move_in_direction(direction, tilemap)
-						
+							
 	elif not is_walkable(target_pos):	
 		play_animation("push")
 		return
-	
-	#save state before next move
-	get_parent().save_state()
 	
 	if dice_block:
 		dice_block.move_in_direction(direction, tilemap)
@@ -73,12 +67,11 @@ func _on_move_finsihed() -> void:
 	
 	# increment step to movecounter 
 	get_parent().add_move()
+	get_parent().save_state()
 
 func is_walkable(target_pos: Vector2) -> bool:
 	var cell := tilemap.local_to_map(tilemap.to_local(target_pos))
-	print("target_pos: ", target_pos, " | cell: ", cell)
 	var tile_data := tilemap.get_cell_tile_data(cell)
-	print("tile_data: ", tile_data)
 	if tile_data == null:
 		return false
 	

@@ -18,6 +18,15 @@ func _ready() -> void:
 	transition = $Scene_Transition
 	await transition.swipe_up()
 	
+	for node in get_children():
+		if node.name.begins_with("DiceBlock"):
+			dice_blocks.append(node)
+		if node.name.begins_with("DiceTile"):
+			dice_tiles.append(node)
+			
+		print(" Dice blocks found: ", dice_blocks.size())
+		print(" Dice tiles found: ", dice_tiles.size())
+	
 	save_state()
 
 
@@ -62,8 +71,7 @@ func go_to_level_select() -> void:
 func save_state() -> void:
 	var state = {
 		"player": $Player.position,
-		"blocks": [],
-		"move_count": move_count
+		"blocks": []
 	}
 	
 	for block in dice_blocks:
@@ -71,14 +79,18 @@ func save_state() -> void:
 	
 	undo_stack.append(state)
 	redo_stack.clear()
-	
+
 func undo() -> void:
 	if undo_stack.size() < 2:
 		return
 		
 	# save state to redo stack
-	redo_stack.append(undo_stack.pop_back())
+	# undo_stack.pop_back()
+	var current_state = undo_stack.pop_back()
+	redo_stack.append(current_state)
+	
 	var state = undo_stack.back()
+	
 	restore_state(state)
 		
 func redo() -> void:
@@ -90,12 +102,18 @@ func redo() -> void:
 	restore_state(state)
 	
 func restore_state(state: Dictionary) -> void:
+	#print("Restoring player to: ", state["player"])
+	#print("Restoring dice to: ", state["blocks"])
+	
 	$Player.position = state["player"]
+	$Player.is_moving = false
 	
 	for i in range(dice_blocks.size()):
-		dice_blocks[i].position = state["blocks"][i]
-		dice_blocks[i].check_on_tile()
+		var block = dice_blocks[i]
+		block.cancel_movement()
+		block.position = state["blocks"][i]
+		block.check_on_tile()
 		
-	move_count = state["move_count"]
+	move_count = undo_stack.size() - 1
 	update_move_counter()
 	
