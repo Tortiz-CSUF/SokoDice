@@ -22,6 +22,8 @@ func _ready() -> void:
 
 
 func _unhandled_input(event: InputEvent) -> void:
+	if $Player.is_moving:
+		return
 	if event.is_action_pressed("ui_cancel"):
 		go_to_level_select()
 	if event.is_action_pressed("restart"):
@@ -60,7 +62,8 @@ func go_to_level_select() -> void:
 func save_state() -> void:
 	var state = {
 		"player": $Player.position,
-		"blocks": []
+		"blocks": [],
+		"move_count": move_count
 	}
 	
 	for block in dice_blocks:
@@ -93,6 +96,6 @@ func restore_state(state: Dictionary) -> void:
 		dice_blocks[i].position = state["blocks"][i]
 		dice_blocks[i].check_on_tile()
 		
-	move_count -= 1
+	move_count = state["move_count"]
 	update_move_counter()
 	

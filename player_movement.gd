@@ -46,15 +46,18 @@ func try_move(direction: Vector2) -> void:
 			return
 			
 		# save state before next move
-		get_parent().save_state()
-		dice_block.move_in_direction(direction, tilemap)
+		#get_parent().save_state()
+		#dice_block.move_in_direction(direction, tilemap)
 						
 	elif not is_walkable(target_pos):	
 		play_animation("push")
 		return
-	else:
-		#save state before next move
-		get_parent().save_state()
+	
+	#save state before next move
+	get_parent().save_state()
+	
+	if dice_block:
+		dice_block.move_in_direction(direction, tilemap)
 		
 	is_moving = true
 	play_animation(direction_to_anim(direction))
