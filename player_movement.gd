@@ -50,9 +50,13 @@ func _on_move_finsihed() -> void:
 
 func is_walkable(target_pos: Vector2) -> bool:
 	var cell := tilemap.local_to_map(tilemap.to_local(target_pos))
+	print("target_pos: ", target_pos, " | cell: ", cell)
 	var tile_data := tilemap.get_cell_tile_data(cell)
+	print("tile_data: ", tile_data)
 	if tile_data == null:
 		return false
+	
+	print("is_wall value: ", tile_data.get_custom_data("is_wall"))
 	return not tile_data.get_custom_data("is_wall")
 
 func face_direction(direction: Vector2) -> void:
