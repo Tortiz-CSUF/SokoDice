@@ -1,3 +1,8 @@
-[gd_scene format=3 uid="uid://lo4oct4enieg"]
+[gd_scene load_steps=2 format=3 uid="uid://lo4oct4enieg"]
+
+[ext_resource type="TileSet" uid="uid://mesdssk5r0pe" path="res://Assets/Environment/Level_Tiles.tres" id="1_58r87"]
 
 [node name="Level_04" type="Node2D"]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+tile_set = ExtResource("1_58r87")

@@ -1,11 +1,8 @@
-[gd_resource type="TileSet" load_steps=8 format=3 uid="uid://mesdssk5r0pe"]
+[gd_resource type="TileSet" load_steps=7 format=3 uid="uid://mesdssk5r0pe"]
 
 [ext_resource type="Texture2D" uid="uid://b7iq3vo85mgut" path="res://Assets/Environment/Dice_tile.png" id="1_cobn7"]
 [ext_resource type="Texture2D" uid="uid://cnixw8g3afu3a" path="res://Assets/Environment/Floor.png" id="2_h2ixg"]
 [ext_resource type="Texture2D" uid="uid://ca68inpc4yjur" path="res://Assets/Environment/Wall.png" id="3_rdsiv"]
-
-[sub_resource type="TileMapPattern" id="TileMapPattern_cobn7"]
-tile_data = PackedInt32Array(0, 2, 0, 65536, 2, 0, 1, 2, 0, 65537, 2, 0)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_chua2"]
 resource_name = "dice tile"
@@ -33,4 +30,3 @@ custom_data_layer_0/type = 1
 sources/0 = SubResource("TileSetAtlasSource_chua2")
 sources/1 = SubResource("TileSetAtlasSource_gjko5")
 sources/2 = SubResource("TileSetAtlasSource_kvphc")
-pattern_0 = SubResource("TileMapPattern_cobn7")
