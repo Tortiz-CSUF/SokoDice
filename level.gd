@@ -62,6 +62,7 @@ func check_win_condition() -> void:
 			get_tree().change_scene_to_file(level_select_path)
 	
 func restart_level() -> void:
+	await transition.swipe_down()
 	get_tree().reload_current_scene()
 	
 func go_to_level_select() -> void:

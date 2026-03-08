@@ -1,9 +1,15 @@
-[gd_scene load_steps=3 format=4 uid="uid://cdry2bqbj5yei"]
+[gd_scene load_steps=8 format=4 uid="uid://cdry2bqbj5yei"]
 
+[ext_resource type="Script" uid="uid://dxw42k8js52pv" path="res://level.gd" id="1_s2nwo"]
 [ext_resource type="TileSet" uid="uid://mesdssk5r0pe" path="res://Assets/Environment/Level_Tiles.tres" id="1_ui82g"]
 [ext_resource type="PackedScene" uid="uid://cqrfgam6hk6lw" path="res://player.tscn" id="2_vr6sc"]
+[ext_resource type="PackedScene" uid="uid://bmsyc3kqs7at1" path="res://ui.tscn" id="3_h1jp1"]
+[ext_resource type="PackedScene" uid="uid://d3va0wv5h0kok" path="res://Scene_Transition.tscn" id="4_s2nwo"]
+[ext_resource type="PackedScene" uid="uid://tpkrgv442bt6" path="res://dice_block.tscn" id="6_dh8jk"]
+[ext_resource type="PackedScene" uid="uid://di1mdnomv85f6" path="res://dice_tile.tscn" id="7_plgvb"]
 
 [node name="Level_05" type="Node2D"]
+script = ExtResource("1_s2nwo")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 position = Vector2(224, -160)
@@ -12,3 +18,11 @@ tile_set = ExtResource("1_ui82g")
 
 [node name="Player" parent="." instance=ExtResource("2_vr6sc")]
 position = Vector2(512, 256)
+
+[node name="UI" parent="." instance=ExtResource("3_h1jp1")]
+
+[node name="Scene_Transition" parent="." instance=ExtResource("4_s2nwo")]
+
+[node name="DiceBlock" parent="." instance=ExtResource("6_dh8jk")]
+
+[node name="DiceTile" parent="." instance=ExtResource("7_plgvb")]
