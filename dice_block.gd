@@ -50,6 +50,7 @@ func move_in_direction(direction: Vector2, tilemap: TileMapLayer) -> void:
 		
 func _on_move_finished() -> void:
 	is_moving = false
+	check_on_tile()
 		
 func is_cell_walkable(target_pos: Vector2, tilemap: TileMapLayer) -> bool:
 	var cell := tilemap.local_to_map(tilemap.to_local(target_pos))
@@ -59,5 +60,15 @@ func is_cell_walkable(target_pos: Vector2, tilemap: TileMapLayer) -> bool:
 		return false
 		
 	return not tile_data.get_custom_data("is_wall")
+		
+func check_on_tile() -> void:
+	is_on_tile = false
+	
+	for node in get_parent().get_children():
+		if node.name.begins_with("DiceTile"):
+			if node.position == position:
+				is_on_tile = true
+				break
+	update_face()
 		
 	
